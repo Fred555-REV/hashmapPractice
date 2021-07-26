@@ -44,14 +44,12 @@ public class Main {
     public static int majorityElement(int[] arr) {
         HashMap<Integer, Integer> numFreq = new HashMap();
         int majority = 0;
-        List<Integer> uniqueNums = new ArrayList<>();
         for (int num : arr) {
             if (numFreq.containsKey(num)) {
                 int count = numFreq.get(num);
                 count++;
                 numFreq.put(num, count);
             } else {
-                uniqueNums.add(num);
                 numFreq.put(num, 1);
             }
             if (numFreq.get(num) > (arr.length / 2)) {
